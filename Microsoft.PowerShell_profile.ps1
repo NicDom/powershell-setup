@@ -153,6 +153,12 @@ function Fuzzy-Ripgrep {
     Invoke-PsFzfRipgrep -SearchString $SearchTerm
 }
 
+function View-PathEnv {
+    $PathEnv = $env:Path.split(";")
+    # $PathEnv | Out-GridView
+    echo $PathEnv
+}
+
 #
 # Aliases
 #
@@ -173,6 +179,7 @@ Set-Alias -Name rgf -Value Fuzzy-Ripgrep
 Set-Alias -Name npr -Value New-Project
 Set-Alias -Name rpr -Value FuzzyRemove-Project
 Set-Alias -Name bak -Value Backup-Dir
+Set-Alias -Name path -Value View-PathEnv
 
 #
 # Misc Aliases
