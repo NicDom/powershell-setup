@@ -6,8 +6,10 @@ Import-Module git-aliases -DisableNameChecking
 # Import-Module PSFzf -DisableNameChecking
 
 $PROJECTSDIR = "$Home\Projects"
+$PROFILEDIR = (Get-Item $PROFILE).Directory.FullName
+
 function fpshdot {
-    Set-Location -Path $Home\OneDrive\Dokumente\PowerShell
+    Set-Location -Path $PROFILEDIR
 }
 
 function New-Project {
@@ -54,12 +56,13 @@ function Open-Explorer {
 }
 
 function Edit-Profile {
-    code $Home\OneDrive\Dokumente\PowerShell\Microsoft.PowerShell_profile.ps1
+    code $PROFILEDIR\Microsoft.PowerShell_profile.ps1
 }
 
 function fprdir {
     Set-Location -Path $PROJECTSDIR
 }
+
 # function fprjui {
 #     $MenuOptions = Get-ChildItem -Path $PROJECTSDIR
 #     $SelectedProject = Create-Menu -MenuTitle "Projects" -MenuOptions $MenuOptions
@@ -150,10 +153,15 @@ function Fuzzy-Ripgrep {
     Invoke-PsFzfRipgrep -SearchString $SearchTerm
 }
 
+#
+# Aliases
+#
+
 Set-Alias -Name zimp -Value Import-ZLocation
 Set-Alias -Name touch -Value Create-Files
 Set-Alias -Name fe -Value Fuzzy-Edit
 Set-Alias -Name ncd -Value Open-VSCode
+Set-Alias -Name cdn -Value Fuzzy-Edit
 Set-Alias -Name ep -Value Open-Explorer
 Set-Alias -Name profile -Value Edit-Profile
 Set-Alias -Name pshdot -Value fpshdot
