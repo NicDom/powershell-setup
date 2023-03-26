@@ -2,6 +2,8 @@
 # Usage: powershell -ExecutionPolicy Bypass -File installer.ps1
 
 # check if $PROFILE exists, if not clone repo
+
+
 if (!(Test-Path $PROFILE)) {
     $PROFILEDIR = "$HOME\Documents\PowerShell"
     git clone https://github.com/NicDom/powershell-setup $PROFILEDIR
@@ -22,6 +24,7 @@ else {
 }
 
 # remove readme.md, LICENSE .git folder and .gitignore
+
 Remove-Item $PROFILEDIR\README.md
 Remove-Item $PROFILEDIR\LICENSE
 Remove-Item $PROFILEDIR\.gitignore
