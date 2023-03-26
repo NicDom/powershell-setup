@@ -7,8 +7,7 @@
 if (!(Test-Path $PROFILE)) {
     $PROFILEDIR = "$HOME\Documents\PowerShell"
     git clone https://github.com/NicDom/powershell-setup $PROFILEDIR
-}
-else {
+} else {
     echo "Profile already exists."
     $PROFILEDIR = (Get-Item $PROFILE).Directory.FullName
     echo "Trying to pull latest changes from repo..."
