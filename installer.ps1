@@ -11,7 +11,7 @@ else {
     $PROFILEDIR = (Get-Item $PROFILE).Directory.FullName
     echo "Trying to pull latest changes from repo..."
     # if $PROFILE exists, pull latest changes. If failes, echo error
-    if (!(git -C $PROFILE pull)) {
+    if (!(git -C $PROFILEDIR pull)) {
         echo "Error pulling latest changes from repo."
     }
     else {
