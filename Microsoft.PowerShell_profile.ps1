@@ -180,6 +180,7 @@ Set-Alias -Name npr -Value New-Project
 Set-Alias -Name rpr -Value FuzzyRemove-Project
 Set-Alias -Name bak -Value Backup-Dir
 Set-Alias -Name path -Value View-PathEnv
+Set-Alias -Name lg -Value lazygit
 
 #
 # Misc Aliases
